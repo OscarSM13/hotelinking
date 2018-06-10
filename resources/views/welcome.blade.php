@@ -8,7 +8,7 @@
     <div class="col-6 mt-5" ></div>
         <h3>Haga click para ver sus codigos promocional</h2>
         <a href="/promociones">
-            <button type="button" class="btn btn-info" >Ver Códigos</button>
+            <button type="button" class="btn btn-info" >Ver Cupones</button>
         </a>
 </div>
 @endsection

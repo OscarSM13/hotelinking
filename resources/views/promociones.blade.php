@@ -20,11 +20,15 @@
 			@forelse($codes as $code)
 
 				@if ($code['user_id'] ==  Auth::user()->id )	
-				
-					<p>{{ $code['uuid'] }} 
-						<button id="button1">Activar</button>
-					</p>
-					
+					@if ($code['status'] == 1)
+						<p>{{ $code['uuid'] }} 
+							<button id="btnactivado">Activar</button>
+						</p>
+					@else
+						<p>{{ $code['uuid'] }} 
+							<button disabled="ture">Activado</button>
+						</p>
+					@endif
 				@endif
 				@if ( $code['user_id'] !=  Auth::user()->id )
 				<p>No tienes ningun cupon ve a la <a href="/">Home</a> para poder crearlos</p>

@@ -20,7 +20,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
+    <script>
+        
+});
+</script>
 </head>
 <body>
     <div id="app" class="container">
@@ -79,23 +82,36 @@
     </div>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
     <script type="text/javascript">
 	$(document).ready(function(){
 		$('#btnguardar').click(function(){
 			var datos=$('#frmajax').serialize();
 			$.ajax({
-				type:"POST",
-				url:"insertar.php",
+				type:"GET",
+				url:"/insertar",
 				data:datos,
 				success:function(r){
-					if(r==1){
-						alert("agregado con exito");
-					}else{
-						alert("Fallo el server");
-					}
+                    alert("Enhorabuena ha obtenido el cupón")
 				}
 			});
-
+			return false;
+		});
+	});
+    </script>
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnactivado').click(function(){
+            $(this).attr("disabled", true).text("Activado");
+			var datos=$('#frmajax').serialize();
+			$.ajax({
+				type:"GET",
+				url:"/desactivar",
+				data:datos,
+				success:function(r){
+                    alert("Enhorabuena ha Canjeado el cupón")
+				}
+			});
 			return false;
 		});
 	});
