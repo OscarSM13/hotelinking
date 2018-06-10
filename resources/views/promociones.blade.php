@@ -21,8 +21,8 @@
 
 				@if ($code['user_id'] ==  Auth::user()->id )	
 				
-					<p>{{ $code['code'] }} 
-						<button>Activar</button>
+					<p>{{ $code['uuid'] }} 
+						<button id="button1">Activar</button>
 					</p>
 					
 				@endif
