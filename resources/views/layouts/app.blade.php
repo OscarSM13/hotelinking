@@ -20,7 +20,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    
+
 </head>
 <body>
     <div id="app" class="container">
@@ -79,13 +79,26 @@
     </div>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function(){
-            $("#button1").click(function(){
-                alert("Ha canjeado el cupon");
-                $(this).attr("disabled", true);
-            });
-        });
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnguardar').click(function(){
+			var datos=$('#frmajax').serialize();
+			$.ajax({
+				type:"POST",
+				url:"insertar.php",
+				data:datos,
+				success:function(r){
+					if(r==1){
+						alert("agregado con exito");
+					}else{
+						alert("Fallo el server");
+					}
+				}
+			});
+
+			return false;
+		});
+	});
 </script>
 </body>
 </html>
