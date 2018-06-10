@@ -15,7 +15,7 @@ class CreateCodesTable extends Migration
     {
         Schema::create('codes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('code')->unique();
+            $table->integer('uuid')->unique();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->timestamps();
