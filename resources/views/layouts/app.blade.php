@@ -82,7 +82,6 @@
     <script type="text/javascript">
 	$(document).ready(function(){
 		$('#btnguardar').click(function(){
-			var datos=$('#frmajax').serialize();
 			$.ajax({
 				type:"GET",
 				url:"/insertar",
@@ -99,9 +98,10 @@
 	$(document).ready(function(){
 		$('#btnactivado').click(function(){
             $(this).attr("disabled", true).text("Activado");
-			var datos=$('#frmajax').serialize();
+			var $datos = {{ Auth::user()->id }};
+            alert($datos)
 			$.ajax({
-				type:"GET",
+				type:"POST",
 				url:"/desactivar",
 				data:datos,
 				success:function(r){

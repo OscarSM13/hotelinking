@@ -37,7 +37,7 @@
 			@endforelse
 			
 	@else
-			<p>Tienes que loguearte para poder ver los codigos</p>
+			<p>Tienes que <a href="/login"> Iniciar sesión</a> para poder ver los codigos</p>
 	@endif
 	</div>
 	
