@@ -18,7 +18,7 @@ class PagesController extends Controller
     public function promociones()
     {
         
-        $codes = Code::all();
+        $codes = Auth::user()->codes();
 
         return view('promociones', [
             'codes' => $codes
