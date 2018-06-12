@@ -85,7 +85,6 @@
 			$.ajax({
 				type:"GET",
 				url:"/insertar",
-				data:datos,
 				success:function(r){
                     alert("Enhorabuena ha obtenido el cupón")
 				}
