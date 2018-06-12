@@ -22,7 +22,7 @@
 				@if ($code['user_id'] ==  Auth::user()->id )	
 					@if ($code['status'] == 1)
 						<p>{{ $code['uuid'] }} 
-							<button id="btnactivado">Activar</button>
+							<button class="btnactivado">Activar</button>
 						</p>
 					@else
 						<p>{{ $code['uuid'] }} 

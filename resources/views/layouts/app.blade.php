@@ -96,12 +96,12 @@
     </script>
     <script type="text/javascript">
 	$(document).ready(function(){
-		$('#btnactivado').click(function(){
+		$('.btnactivado').click(function(){
             $(this).attr("disabled", true).text("Activado");
-			var $datos = {{ Auth::user()->id }};
-            alert($datos)
+			var datos = {{ isset(Auth::user()->id) }};
+            alert(datos)
 			$.ajax({
-				type:"POST",
+				type:"GET",
 				url:"/desactivar",
 				data:datos,
 				success:function(r){
