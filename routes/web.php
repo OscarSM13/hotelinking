@@ -6,10 +6,10 @@ Route::get('/', 'PagesController@home' );
 Route::get('/promociones', 'PagesController@promociones' );
 
 
-Route::get('/insertar', function () {
+Route::post('/insertar', function () {
     return view('/layouts/insertar');
 });
-Route::get('/desactivar', function () {
+Route::post('/desactivar', function () {
     return view('/layouts/desactivar');
 });
 

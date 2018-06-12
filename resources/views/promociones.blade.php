@@ -31,9 +31,10 @@
 					@endif
 				@endif
 				@if ( $code['user_id'] !=  Auth::user()->id )
-				<p>No tienes ningun cupon ve a la <a href="/">Home</a> para poder crearlos</p>
 			@endif
 			@empty
+			
+			<p>No tienes ningun cupon ve a la <a href="/">Home</a> para poder crearlos</p>
 			@endforelse
 			
 	@else

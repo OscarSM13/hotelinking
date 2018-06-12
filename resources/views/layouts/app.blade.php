@@ -82,9 +82,13 @@
     <script type="text/javascript">
 	$(document).ready(function(){
 		$('#btnguardar').click(function(){
+            var datos ={ 'user_id' : {{ Auth::id() }}  }
+            alert(datos['user_id']);
 			$.ajax({
-				type:"GET",
+				type:"POST",
 				url:"/insertar",
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+				data:datos,
 				success:function(r){
                     alert("Enhorabuena ha obtenido el cupón")
 				}
@@ -97,11 +101,12 @@
 	$(document).ready(function(){
 		$('.btnactivado').click(function(){
             $(this).attr("disabled", true).text("Activado");
-			var datos = {{ isset(Auth::user()->id) }};
+			var datos =1;
             alert(datos)
 			$.ajax({
-				type:"GET",
+				type:"POST",
 				url:"/desactivar",
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 				data:datos,
 				success:function(r){
                     alert("Enhorabuena ha Canjeado el cupón")

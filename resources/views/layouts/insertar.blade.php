@@ -1,10 +1,11 @@
 <?php 
-    $conexion=mysqli_connect('localhost','oscar','oscar','hotelinking');
-    
-    $uuid= rand(1, 100000000);
+	$conexion=mysqli_connect('localhost','oscar','oscar','hotelinking');
+	
+    $user_id = $_POST['user_id'];
+	$uuid= rand(1, 100000000);
 
 	
 	$sql="INSERT into codes (uuid, user_id)
-			values (". $uuid . " ,1)";
+			values (". $uuid . " ,". $user_id.")";
 	echo mysqli_query($conexion,$sql);
  ?>
