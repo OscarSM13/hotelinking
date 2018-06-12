@@ -83,7 +83,6 @@
 	$(document).ready(function(){
 		$('#btnguardar').click(function(){
             var datos ={ 'user_id' : {{ Auth::id() }}  }
-            alert(datos['user_id']);
 			$.ajax({
 				type:"POST",
 				url:"/insertar",
@@ -101,8 +100,8 @@
 	$(document).ready(function(){
 		$('.btnactivado').click(function(){
             $(this).attr("disabled", true).text("Activado");
-			var datos =1;
-            alert(datos)
+			var datos = { 'uuid' : document.getElementById("parrafo").innerText};
+            alert(datos['uuid'])
 			$.ajax({
 				type:"POST",
 				url:"/desactivar",
