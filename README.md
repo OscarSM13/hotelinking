@@ -1,7 +1,10 @@
 # Hotelinking
-Activacion de tikets para hotelinking
+Activacion de codigos para hotelinking
 ## Empezando
-Primero de todo hay que clonar el proyecto con git clone https://github.com/OscarSM13/hotelinking.git.
+Primero de todo hay que clonar el proyecto
+```
+git clone https://github.com/OscarSM13/hotelinking.git.
+```
 ### Installing
 Hay que instalar composer: 
 ```
