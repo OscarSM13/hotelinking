@@ -26,15 +26,4 @@ class UsersTest extends TestCase{
 
 		$this->assertAuthenticatedAs($user);
     }
-    
-    public function testUserCode()
-	{
-		$user = factory(User::class)->create();
-		$code = factory(Code::class)->create();
-
-		$response = $this->actingAs($code)->post($code->user_id.'/generateCupon');
-		$this->assertDatabaseHas('codes', [
-			'user_id' => $user->id,
-		]);
-	}
 }
