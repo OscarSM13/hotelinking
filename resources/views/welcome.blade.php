@@ -1,18 +1,24 @@
 @extends('layouts.app')
+
 @section('content')
-<div class="jumbotron text-center">
-    <h1>Hotelinking</h1>
-    <div class="col-6 mt-5"></div>
-        <h3>Haga click para obtener una codigo promocional</h2>
-        @if (isset(Auth::user()->id))
-            <button id="btnguardar" type="button" class="btn btn-primary">Crear Cupón</button>
-        @else
-            <button id="btnlogin" type="button" class="btn btn-primary">Crear Cupón</button>
-        @endif
-    <div class="col-6 mt-5" ></div>
-        <h3>Haga click para ver sus codigos promocional</h2>
-        <a href="/promociones">
-            <button type="button" class="btn btn-info" >Ver Cupones</button>
-        </a>
-</div>
+    <div class="jumbotron text-center">
+        <div class="content">
+            <div class="row">
+                @if (isset(Auth::user()->id))
+                    <create-cupon-component :user="{{ Auth::user() }}"></create-cupon-component>
+                    <div class="col-md-6">
+                        <h3>Haga click para ver sus codigos promocional</h3>
+                        <a href="{{ route('cupones') }}">
+                            <button type="button" class="btn btn-info">Ver Cupones</button>
+                        </a>
+                    </div>
+                @else
+                    <div class="col-md-12">
+                        <h4>Debe estar logueado para poder ver y generar nuestros cupones</h4>
+                        <p class="text-center"><a href="{{ route('login') }}">Conectarse</a> | <a href="{{ route('register') }}">Registrarse</a></p>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
 @endsection

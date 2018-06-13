@@ -15,7 +15,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('create-cupon-component', require('./components/CreateCuponComponent.vue'));
+Vue.component('validate-cupon-component', require('./components/ValidateCuponComponent.vue'));
 
 const app = new Vue({
     el: '#app'

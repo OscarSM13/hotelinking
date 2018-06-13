@@ -1,16 +1,7 @@
 <?php
 
 
-Route::get('/', 'PagesController@home' );
-
-Route::get('/promociones', 'PagesController@promociones' );
-
-
-Route::post('/insertar', function () {
-    return view('/layouts/insertar');
-});
-Route::post('/desactivar', function () {
-    return view('/layouts/desactivar');
-});
+Route::name('home')->get('/', 'PagesController@home');
+Route::name('cupones')->get('/cupones', 'PagesController@cupones');
 
 Auth::routes();

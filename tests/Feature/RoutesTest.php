@@ -14,14 +14,14 @@ class RoutesTest extends TestCase
      */
     public function testHome()
     {
-        $response = $this->get('/');
+        $response = $this->get(route('home'));
 
         $response->assertStatus(200);
     }
 
-    public function testPromociones()
+    public function testCupones()
     {
-        $response = $this->get('/promociones');
+        $response = $this->get(route('cupones'));
 
         $response->assertStatus(200);
     }

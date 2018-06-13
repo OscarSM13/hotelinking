@@ -5,22 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Code;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
     public function home()
     {
-        
         return view('welcome');
-        
     }
 
-    public function promociones()
+    public function cupones()
     {
-        
-        $codes = Code::all();
+        $codes = Auth::user()->codes;
 
-        return view('promociones', [
+        return view('cupones', [
             'codes' => $codes
         ]);
     }
