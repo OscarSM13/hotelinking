@@ -19,6 +19,7 @@
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
+<!-- Esto sera el header -->
 <div id="app" class="container">
     <nav class="navbar navbar-light static top navbar-toggleable-md bg-faded">
         <div class="container">
@@ -31,14 +32,8 @@
             </button>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
+                    <!-- En el caso que no este logueado -->
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -46,6 +41,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                         </li>
+                    <!-- En el caso que estes logueado -->
                     @else
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
@@ -71,8 +67,9 @@
             </div>
         </div>
     </nav>
-
+    <!-- Aquí acaba el header-->
     <main class="py-4">
+    <!-- Aqui llamo al contenido  -->
         @yield('content')
     </main>
 </div>

@@ -9,17 +9,24 @@ use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
+    //Funcion que muestra la vista welcome
     public function home()
     {
         return view('welcome');
     }
 
+    //Funcion que muestra la vista de cupones y busca los cupones del usuario
     public function cupones()
     {
-        $codes = Auth::user()->codes;
+        if (Auth::check()){
 
-        return view('cupones', [
-            'codes' => $codes
-        ]);
+            $codes = Auth::user()->codes;
+
+            return view('cupones', [
+                'codes' => $codes
+            ]);
+        }else{
+            return view('cupones');
+        }
     }
 }

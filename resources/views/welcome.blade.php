@@ -4,7 +4,9 @@
     <div class="jumbotron text-center">
         <div class="content">
             <div class="row">
+            <!-- If para verificar que el usuario esta logueado-->
                 @if (isset(Auth::user()->id))
+                <!--  Con vue llamo al componente Create Cupon Component para crear un cupon-->
                     <create-cupon-component :user="{{ Auth::user() }}"></create-cupon-component>
                     <div class="col-md-6">
                         <h3>Haga click para ver sus codigos promocional</h3>

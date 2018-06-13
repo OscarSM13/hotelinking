@@ -1,6 +1,7 @@
 <template>
     <div class="col-md-6">
         <h3>Haga click para obtener una codigo promocional</h3>
+        <!-- Con axios creo el metodo creteCupon el cual envia al servidor  -->
         <button @click.prevent="createCupon" type="button" class="btn btn-primary">Crear Cupón</button>
     </div>
 </template>
