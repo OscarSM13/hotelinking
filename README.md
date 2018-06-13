@@ -12,7 +12,7 @@ php -r "unlink('composer-setup.php');"
 ```
 ## Base de datos
 Hay que añadir las credenciales de la base de datos en .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD) .
-####Migraciones
+### Migraciones
 Hay que ejecutar las migraciones para crear las tablas de la base de datos.
 ```
 php artisan migrate
